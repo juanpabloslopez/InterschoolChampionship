@@ -4,8 +4,10 @@
 /*     ENCODING = 'UTF8' */
 /*     CONNECTION LIMIT = -1; */
 
-DROP TABLE IF EXISTS Competitor CASCADE;
-DROP TABLE IF EXISTS Team CASCADE;
+/* DROP TABLE IF EXISTS Competitor CASCADE; */
+/* DROP TABLE IF EXISTS Team CASCADE; */
+/* DROP TABLE IF EXISTS Role1 CASCADE; */
+/* DROP TABLE IF EXISTS School CASCADE; */
 
 CREATE TABLE public.Competitor(
     rut integer NOT NULL,
@@ -13,7 +15,7 @@ CREATE TABLE public.Competitor(
     second_name name,
     last_name name NOT NULL,
     last_second_name name,
-    id_role1 text NOT NULL,
+    id_role1 integer NOT NULL,
     gender text NOT NULL,
     age integer NOT NULL,
     id_team integer NOT NULL,
@@ -35,7 +37,7 @@ CREATE TABLE public.Team(
     id_school integer NOT NULL,
     team_name name NOT NULL,
     CONSTRAINT id_team_pk PRIMARY KEY (id_team),
-    CONSTRAINT fk_id_team FOREIGN KEY (id_team)
+    CONSTRAINT fk_id_school FOREIGN KEY (id_school)
         REFERENCES public.School (id_school)
 );
 
@@ -51,6 +53,14 @@ CREATE TABLE public.School(
 ALTER TABLE IF EXISTS public.School
     OWNER to postgres;
 
+CREATE TABLE public.Role1(
+    id_role1 integer NOT NULL,
+    name_role1 name NOT NULL,
+    CONSTRAINT id_id_role1_pk PRIMARY KEY (id_role1)
+);
+
+ALTER TABLE IF EXISTS public.Role1
+    OWNER to postgres;
 
 
 
