@@ -42,6 +42,14 @@ CREATE TABLE public.Team(
 ALTER TABLE IF EXISTS public.Team
     OWNER to postgres;
 
+CREATE TABLE public.School(
+    id_school integer NOT NULL,
+    name_school name NOT NULL,
+    CONSTRAINT id_school_pk PRIMARY KEY (id_school)
+);
+
+ALTER TABLE IF EXISTS public.School
+    OWNER to postgres;
 
 
 
