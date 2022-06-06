@@ -18,18 +18,40 @@ CREATE TABLE public.Competitor(
     age integer NOT NULL,
     id_team integer NOT NULL,
     id_school integer NOT NULL,
-    CONSTRAINT rut_pk PRIMARY KEY (rut)
-    /* CONSTRAINT fk_id_team FOREIGN KEY (id_team) */
-    /*     REFERENCES public.Team (id_team), */
-    /* CONSTRAINT fk_id_role1 FOREIGN KEY (id_role1) */
-    /*     REFERENCES public.Role1 (id_role1), */
-    /* CONSTRAINT fk_id_school FOREIGN KEY (id_school) */
+    CONSTRAINT rut_pk PRIMARY KEY (rut),
+    CONSTRAINT fk_id_team FOREIGN KEY (id_team)
+        REFERENCES public.Team (id_team),
+    CONSTRAINT fk_id_role1 FOREIGN KEY (id_role1)
+        REFERENCES public.Role1 (id_role1),
+    CONSTRAINT fk_id_school FOREIGN KEY (id_school)
+        REFERENCES public.School (id_school)
 );
 
 ALTER TABLE IF EXISTS public.Competitor
     OWNER to postgres;
 
 CREATE TABLE public.Team(
-
+    id_team integer NOT NULL,
+    id_school integer NOT NULL,
+    team_name name NOT NULL,
+    CONSTRAINT id_team_pk PRIMARY KEY (id_team),
+    CONSTRAINT fk_id_team FOREIGN KEY (id_team)
+        REFERENCES public.School (id_school)
 );
+
+ALTER TABLE IF EXISTS public.Team
+    OWNER to postgres;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
