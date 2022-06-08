@@ -5,14 +5,6 @@ CREATE DATABASE InterChamp
     ENCODING = 'UTF8'
     CONNECTION LIMIT = -1;
 
-/* DROP TABLE IF EXISTS Competitor CASCADE; */
-/* DROP TABLE IF EXISTS Team CASCADE; */
-/* DROP TABLE IF EXISTS Role1 CASCADE; */
-/* DROP TABLE IF EXISTS Court CASCADE; */
-/* DROP TABLE IF EXISTS Discipline CASCADE; */
-/* DROP TABLE IF EXISTS School CASCADE; */
-/* DROP TABLE IF EXISTS Match CASCADE; */
-
 CREATE TABLE Discipline(
     id_discipline integer NOT NULL,
     name_discipline name NOT NULL,
