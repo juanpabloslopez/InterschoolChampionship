@@ -8,27 +8,27 @@ CREATE DATABASE InterChamp
 CREATE TABLE Discipline(
     id_discipline integer NOT NULL,
     name_discipline name NOT NULL,
-    PRIMARY KEY (id_discipline)
+    CONSTRAINT id_discipline_pk PRIMARY KEY (id_discipline)
 );
 
 CREATE TABLE Role1(
     id_role1 integer NOT NULL,
     name_role1 name NOT NULL,
-    PRIMARY KEY (id_role1)
+    CONSTRAINT id_role1_pk PRIMARY KEY (id_role1)
 );
 
 CREATE TABLE School(
     id_school integer NOT NULL,
     name_school name NOT NULL,
-    PRIMARY KEY (id_school)
+    CONSTRAINT id_school_pk PRIMARY KEY (id_school)
 );
 
 CREATE TABLE Team(
     id_team integer NOT NULL,
     id_school integer NOT NULL,
     team_name name NOT NULL,
-    PRIMARY KEY (id_team),
-    FOREIGN KEY (id_school)
+    CONSTRAINT id_team_pk PRIMARY KEY (id_team),
+    CONSTRAINT fk_id_school FOREIGN KEY (id_school)
         REFERENCES School (id_school)
 );
 
@@ -36,8 +36,8 @@ CREATE TABLE Court(
     id_court integer NOT NULL,
     id_school integer NOT NULL,
     name_court name NOT NULL,
-    PRIMARY KEY (id_court),
-    FOREIGN KEY (id_school)
+    CONSTRAINT id_court_pk PRIMARY KEY (id_court),
+    CONSTRAINT fk_id_school FOREIGN KEY (id_school)
         REFERENCES School (id_school)
 );
 
@@ -52,12 +52,12 @@ CREATE TABLE Competitor(
     age integer NOT NULL,
     id_team integer NOT NULL,
     id_school integer NOT NULL,
-    PRIMARY KEY (rut),
-    FOREIGN KEY (id_team)
+    CONSTRAINT rut_pk PRIMARY KEY (rut),
+    CONSTRAINT fk_id_team FOREIGN KEY (id_team)
         REFERENCES Team (id_team),
-    FOREIGN KEY (id_role1)
+    CONSTRAINT fk_id_role1 FOREIGN KEY (id_role1)
         REFERENCES Role1 (id_role1),
-    FOREIGN KEY (id_school)
+    CONSTRAINT fk_id_school FOREIGN KEY (id_school)
         REFERENCES School (id_school)
 );
 
@@ -70,14 +70,14 @@ CREATE TABLE Match(
     id_discipline integer NOT NULL,
     id_court integer NOT NULL,
     date date NOT NULL,
-    PRIMARY KEY (id_match),
-    FOREIGN KEY (id_team1)
+    CONSTRAINT id_match_pk PRIMARY KEY (id_match),
+    CONSTRAINT fk_id_team1 FOREIGN KEY (id_team1)
         REFERENCES Team (id_team),
-    FOREIGN KEY (id_team2)
+    CONSTRAINT fk_id_team2 FOREIGN KEY (id_team2)
         REFERENCES Team (id_team),
-    FOREIGN KEY (id_discipline)
+    CONSTRAINT fk_id_discipline FOREIGN KEY (id_discipline)
         REFERENCES Discipline (id_discipline),
-    FOREIGN KEY (id_court)
+    CONSTRAINT fk_id_court FOREIGN KEY (id_court)
         REFERENCES Court (id_court)
 );
 
@@ -106,9 +106,9 @@ CREATE TABLE Match(
 
 /* [Competitor */
 
-/* INSERT INTO Competitor( */
-/*     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school) */
-/*     VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 3, 'Male', 20, 1, 1); */
+INSERT INTO Competitor(
+    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
+    VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 3, 'Male', 20, 1, 1);
 
 /* INSERT INTO Competitor( */
 /*     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school) */
@@ -122,17 +122,14 @@ CREATE TABLE Match(
 
 /* [Team */
 
-/* INSERT INTO Team( */
-/*     id_team, id_school, team_name) */
-/*     VALUES(1, 1, 'Coca Juniors'); */
+INSERT INTO Team(
+    id_team, id_school, team_name)
+    VALUES(1, 1, 'Coca Juniors');
 
 /* Team] */
 
-/* [School */
 
 
-
-/* School] */
 
 
 
