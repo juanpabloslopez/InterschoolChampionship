@@ -1,9 +1,17 @@
 DROP DATABASE IF EXISTS InterChamp;
-CREATE DATABASE InterChamp
-    WITH
-    OWNER = postgres
-    ENCODING = 'UTF8'
-    CONNECTION LIMIT = -1;
+/* CREATE DATABASE InterChamp */
+/*     WITH */
+/*     OWNER = postgres */
+/*     ENCODING = 'UTF8' */
+/*     CONNECTION LIMIT = -1; */
+
+/* DROP TABLE IF EXISTS Match CASCADE; */
+/* DROP TABLE IF EXISTS Competitor CASCADE; */
+/* DROP TABLE IF EXISTS Court CASCADE; */
+/* DROP TABLE IF EXISTS Team CASCADE; */
+/* DROP TABLE IF EXISTS School CASCADE; */
+/* DROP TABLE IF EXISTS Role1 CASCADE; */
+/* DROP TABLE IF EXISTS Discipline CASCADE; */
 
 CREATE TABLE Discipline(
     id_discipline integer NOT NULL,
@@ -64,7 +72,7 @@ CREATE TABLE Competitor(
 CREATE TABLE Match(
     id_match integer NOT NULL,
     score_team1 integer NOT NULL,
-    score_team2 integer NOT NULL,
+    score_team2 integer NOT NULL, 
     id_team1 integer NOT NULL,
     id_team2 integer NOT NULL,
     id_discipline integer NOT NULL,
@@ -80,10 +88,6 @@ CREATE TABLE Match(
     FOREIGN KEY (id_court)
         REFERENCES Court (id_court)
 );
-
-/* INSERT INTO public.Comuna( */
-/*     nombre_com, id_com) */
-/*     VALUES ('Providencia', 7500000); */
 
 /* Referencias para agregar competidores */
 
@@ -104,42 +108,93 @@ CREATE TABLE Match(
 /* id_school = 2 ('Nacional') */
 /* id_school = 3 ('Liceo 7') */
 
+/* [Discipline */
+
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(1, 'Futbol');
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(2, 'Basketball');
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(3, 'Volleyball');
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(4, 'PingPong');
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(5, 'HandBall');
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(6, 'Rugby');
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(7, 'Taca-Taca');
+INSERT INTO Discipline(
+    id_discipline, name_discipline)
+    VALUES(8, 'Ajedrez');
+
+/* Discipline] */
+
+/* [Role1 */
+
+INSERT INTO Role1(
+    id_role1, name_role1)
+    VALUES(1, 'Arquero');
+INSERT INTO Role1(
+    id_role1, name_role1)
+    VALUES(5, 'Pivote');
+INSERT INTO Role1(
+    id_role1, name_role1)
+    VALUES(10, 'Creador');
+
+/* Role1] */
+
+/* [School */
+
+INSERT INTO School(
+    id_school, name_school)
+    VALUES(1, 'Liceo Lastarria');
+
+/* School] */
+
+/* [Team */
+
+INSERT INTO Team(
+    id_team, id_school, team_name)
+    VALUES(1, 1, 'Coca Juniors');
+
+/* Team] */
+
+/* [Court */
+/* What is court? */
+
+INSERT INTO Court(
+    id_court, id_school, name_court)
+    VALUES(1, 1, 'Monumental');
+
+/* Court] */
+
 /* [Competitor */
 
-/* INSERT INTO Competitor( */
-/*     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school) */
-/*     VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 3, 'Male', 20, 1, 1); */
-
+INSERT INTO Competitor(
+    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
+    VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 1, 'Male', 20, 1, 1);
 /* INSERT INTO Competitor( */
 /*     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school) */
 /*     VALUES(97018359, 'Juan', 'Jose', 'Duarte', 'Lange', 9, 'Male', 50, 5, 2); */
-
 /* INSERT INTO Competitor( */
 /*     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school) */
 /*     VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 10, 'Male', 23, 4, 3); */
 
 /* Competitor] */
 
-/* [Team */
+/* [Match */
 
-/* INSERT INTO Team( */
-/*     id_team, id_school, team_name) */
-/*     VALUES(1, 1, 'Coca Juniors'); */
+/* aqui */
 
-/* Team] */
-
-/* [School */
-
-
-
-/* School] */
-
-
-
-
-
-
-
+/* Match] */
 
 
 /* ARP DEBERIA ENTRAR */
