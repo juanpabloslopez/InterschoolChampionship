@@ -94,24 +94,31 @@ CREATE TABLE Match(
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(1, 'Futbol');
+
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(2, 'Basketball');
+
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(3, 'Volleyball');
+
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(4, 'PingPong');
+
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(5, 'HandBall');
+
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(6, 'Rugby');
+
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(7, 'Taca-Taca');
+
 INSERT INTO Discipline(
     id_discipline, name_discipline)
     VALUES(8, 'Ajedrez');
@@ -123,12 +130,15 @@ INSERT INTO Discipline(
 INSERT INTO Role1(
     id_role1, name_role1)
     VALUES(1, 'Arquero');
+
 INSERT INTO Role1(
     id_role1, name_role1)
     VALUES(5, 'Pivote');
+
 INSERT INTO Role1(
     id_role1, name_role1)
     VALUES(9, 'Delantero');
+
 INSERT INTO Role1(
     id_role1, name_role1)
     VALUES(10, 'Creador');
@@ -196,9 +206,11 @@ INSERT INTO Court(
 INSERT INTO Competitor(
     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
     VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 1, 'Male', 20, 1, 1);
+
 INSERT INTO Competitor(
     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
     VALUES(97018359, 'Juan', 'Jose', 'Duarte', 'Lange', 9, 'Male', 50, 2, 2);
+
 INSERT INTO Competitor(
     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
     VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 10, 'Male', 23, 3, 3);
