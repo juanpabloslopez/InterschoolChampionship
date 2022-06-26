@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS InterChamp;
-/* CREATE DATABASE InterChamp */
+/* DROP DATABASE IF EXISTS interchamp; */
+/* CREATE DATABASE interchamp */
 /*     WITH */
 /*     OWNER = postgres */
 /*     ENCODING = 'UTF8' */
@@ -89,25 +89,6 @@ CREATE TABLE Match(
         REFERENCES Court (id_court)
 );
 
-/* Referencias para agregar competidores */
-
-/* [Role1] */
-/* id_role1 = 1 (Arquero) */
-/* id_role1 = 9 (Goleador) */
-/* id_role1 = 10 (Creador) */
-
-/* [Team] */
-/* id_team = 1 ('Coca Juniors') */
-/* id_team = 2 ('Vokda Juniors') */
-/* id_team = 3 ('Union Penosa') */
-/* id_team = 4 ('Indio cu') */
-/* id_team = 5 ('Real Alcoholicos') */
-
-/* [School] */
-/* id_school = 1 ('Liceo Lastarria') */
-/* id_school = 2 ('Nacional') */
-/* id_school = 3 ('Liceo 7') */
-
 /* [Discipline */
 
 INSERT INTO Discipline(
@@ -147,6 +128,9 @@ INSERT INTO Role1(
     VALUES(5, 'Pivote');
 INSERT INTO Role1(
     id_role1, name_role1)
+    VALUES(9, 'Delantero');
+INSERT INTO Role1(
+    id_role1, name_role1)
     VALUES(10, 'Creador');
 
 /* Role1] */
@@ -157,6 +141,14 @@ INSERT INTO School(
     id_school, name_school)
     VALUES(1, 'Liceo Lastarria');
 
+INSERT INTO School(
+    id_school, name_school)
+    VALUES(2, 'Liceo 7');
+
+INSERT INTO School(
+    id_school, name_school)
+    VALUES(3, 'Nacional');
+
 /* School] */
 
 /* [Team */
@@ -165,14 +157,37 @@ INSERT INTO Team(
     id_team, id_school, team_name)
     VALUES(1, 1, 'Coca Juniors');
 
+INSERT INTO Team(
+    id_team, id_school, team_name)
+    VALUES(2, 1, 'Union Penosa');
+
+INSERT INTO Team(
+    id_team, id_school, team_name)
+    VALUES(3, 2, 'Real Alcoholicos');
+
+INSERT INTO Team(
+    id_team, id_school, team_name)
+    VALUES(4, 2, 'Indio-Cu');
+
+INSERT INTO Team(
+    id_team, id_school, team_name)
+    VALUES(5, 3, 'Vokda Juniors');
+
 /* Team] */
 
 /* [Court */
-/* What is court? */
 
 INSERT INTO Court(
     id_court, id_school, name_court)
     VALUES(1, 1, 'Monumental');
+
+INSERT INTO Court(
+    id_court, id_school, name_court)
+    VALUES(2, 2, 'San Carlos de Apoquindo');
+
+INSERT INTO Court(
+    id_court, id_school, name_court)
+    VALUES(3, 3, 'FakeEstadiodelaU');
 
 /* Court] */
 
@@ -181,23 +196,19 @@ INSERT INTO Court(
 INSERT INTO Competitor(
     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
     VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 1, 'Male', 20, 1, 1);
-/* INSERT INTO Competitor( */
-/*     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school) */
-/*     VALUES(97018359, 'Juan', 'Jose', 'Duarte', 'Lange', 9, 'Male', 50, 5, 2); */
-/* INSERT INTO Competitor( */
-/*     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school) */
-/*     VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 10, 'Male', 23, 4, 3); */
+INSERT INTO Competitor(
+    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
+    VALUES(97018359, 'Juan', 'Jose', 'Duarte', 'Lange', 9, 'Male', 50, 2, 2);
+INSERT INTO Competitor(
+    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
+    VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 10, 'Male', 23, 3, 3);
 
 /* Competitor] */
 
 /* [Match */
 
-/* aqui */
+INSERT INTO Match(
+    id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
+    VALUES(1, 3, 2, 1, 2, 1, 1, '25/6/2022');
 
 /* Match] */
-
-
-/* ARP DEBERIA ENTRAR */
-/* EMPRESA PING LATENCIA */
-/* PROGRAMAS QUE USO */
-/* traceroute */
