@@ -11,6 +11,8 @@ Query 4(Promedio de edad de los jugadores agrupados por disciplina):
 SELECT SUM(c.age)/COUNT(c.age) FROM competitor c, discipline d WHERE c.id_discipline = d.id_discipline;
 
 Query 5(Cuál es el rol más común dentro de los competidores):
+# Esta mala, pero en volá sirve de idea si alguien se inspira
+SELECT r.name_role1 FROM role1 r, competitor c WHERE c.id_role1 = r.id_role1 order by c.id_role1;
 
-
-Select r.rol from rol as r, (Select count(rol_id), c.rol_id as id  from competitor as c group by c.rol_id order by count(rol_id) limit 1) as mayor where mayor.id= rol.id;
+# Query de mierda de Seba Gonzales, en caso de identificarlo en la U, le pegamosj
+SELECT r.rol1 from rol1 as r, (SELECT COUNT(id_role1), c.id_role1 as id from competitor as c group by c.id_role1 order by count(id_role1) limit 1) as mayor where mayor.id = rol.id;

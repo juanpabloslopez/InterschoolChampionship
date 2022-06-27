@@ -212,7 +212,7 @@ INSERT INTO Competitor(
 
 INSERT INTO Competitor(
     rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school, id_discipline)
-    VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 10, 'Male', 23, 3, 4, 1);
+    VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 1, 'Male', 23, 3, 4, 1);
 
 /* Competitor] */
 
