@@ -1,0 +1,14 @@
+Query 1(Top 3 de los equipos en la disciplina X (X = cualquier disciplina que estimen)):
+SELECT t.team_name, (SUM(m.score_team1)+SUM(m.score_team2)) FROM team t, discipline d, match m WHERE d.id_discipline = m.id_discipline AND (t.id_team = m.id_team1 OR t.id_team = m.id_team2) group by t.team_name order by (SUM(m.score_team1)+SUM(m.score_team2)) DESC LIMIT 3;
+
+Query 2(Tablero de puntajes por colegio en la disciplina X ordenados de mayor a menor):
+SELECT t.team_name, (SUM(m.score_team1)+SUM(m.score_team2)) FROM team t, discipline d, match m WHERE d.id_discipline = m.id_discipline AND (t.id_team = m.id_team1 OR t.id_team = m.id_team2) group by t.team_name order by (SUM(m.score_team1)+SUM(m.score_team2)) DESC;
+
+Query 3(Equipo con menor puntaje en la disciplina X):
+
+
+Query 4(Promedio de edad de los jugadores agrupados por disciplina):
+
+
+Query 5(Cuál es el rol más común dentro de los competidores):
+

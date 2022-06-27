@@ -218,12 +218,15 @@ INSERT INTO Competitor(
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(1, 3, 2, 1, 2, 1, 1, '25/06/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(2, 1, 0, 3, 4, 1, 2, '26/06/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(3, 3, 0, 5, 1, 1, 3, '27/06/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(4, 0, 2, 4, 2, 1, 1, '28/06/2022');
@@ -231,18 +234,23 @@ INSERT INTO Match(
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(5, 4, 2, 3, 5, 1, 2, '29/06/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(6, 6, 0, 4, 1, 1, 2, '30/06/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(7, 0, 1, 2, 4, 1, 3, '01/07/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(8, 2, 1, 1, 5, 1, 3, '02/07/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(9, 3, 5, 2, 3, 1, 2, '03/07/2022');
+
 INSERT INTO Match(
     id_match, score_team1, score_team2, id_team1, id_team2, id_discipline, id_court, date)
     VALUES(10, 4, 0, 4, 3, 1, 1, '04/07/2022');
