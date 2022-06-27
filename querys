@@ -5,10 +5,12 @@ Query 2(Tablero de puntajes por colegio en la disciplina X ordenados de mayor a 
 SELECT t.team_name, (SUM(m.score_team1)+SUM(m.score_team2)) FROM team t, discipline d, match m WHERE d.id_discipline = m.id_discipline AND (t.id_team = m.id_team1 OR t.id_team = m.id_team2) group by t.team_name order by (SUM(m.score_team1)+SUM(m.score_team2)) DESC;
 
 Query 3(Equipo con menor puntaje en la disciplina X):
-
+SELECT t.team_name, (SUM(m.score_team1)+SUM(m.score_team2)) FROM team t, discipline d, match m WHERE d.id_discipline = m.id_discipline AND (t.id_team = m.id_team1 OR t.id_team = m.id_team2) group by t.team_name order by (SUM(m.score_team1)+SUM(m.score_team2)) ASC LIMIT 1;
 
 Query 4(Promedio de edad de los jugadores agrupados por disciplina):
-
+SELECT SUM(c.age)/COUNT(c.age) FROM competitor c, discipline d WHERE c.id_discipline = d.id_discipline;
 
 Query 5(Cuál es el rol más común dentro de los competidores):
 
+
+Select r.rol from rol as r, (Select count(rol_id), c.rol_id as id  from competitor as c group by c.rol_id order by count(rol_id) limit 1) as mayor where mayor.id= rol.id;
