@@ -52,13 +52,16 @@ CREATE TABLE Competitor(
     age integer NOT NULL,
     id_team integer NOT NULL,
     id_school integer NOT NULL,
+    id_discipline integer NOT NULL,
     PRIMARY KEY (rut),
     FOREIGN KEY (id_team)
         REFERENCES Team (id_team),
     FOREIGN KEY (id_role1)
         REFERENCES Role1 (id_role1),
     FOREIGN KEY (id_school)
-        REFERENCES School (id_school)
+        REFERENCES School (id_school),
+    FOREIGN KEY (id_discipline)
+        REFERENCES Discipline (id_discipline)
 );
 
 CREATE TABLE Match(
@@ -200,16 +203,16 @@ INSERT INTO Court(
 /* [Competitor */
 
 INSERT INTO Competitor(
-    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
-    VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 1, 'Male', 20, 1, 1);
+    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school, id_discipline)
+    VALUES(209570653, 'Jozsef', 'Jesus', 'Reyes', 'Bascones', 1, 'Male', 20, 1, 1, 1);
 
 INSERT INTO Competitor(
-    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
-    VALUES(97018359, 'Juan', 'Jose', 'Duarte', 'Lange', 9, 'Male', 50, 2, 2);
+    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school, id_discipline)
+    VALUES(97018359, 'Juan', 'Jose', 'Duarte', 'Lange', 9, 'Male', 50, 2, 2, 1);
 
 INSERT INTO Competitor(
-    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school)
-    VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 10, 'Male', 23, 3, 4);
+    rut, first_name, second_name, last_name, last_second_name, id_role1, gender, age, id_team, id_school, id_discipline)
+    VALUES(197945591, 'Leonardo', 'Andres', 'Rojas', 'Rebolledo', 10, 'Male', 23, 3, 4, 1);
 
 /* Competitor] */
 
